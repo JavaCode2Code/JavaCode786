@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class DounStreamCollectoer {
+public class CountingStringStreamCollectors {
 public static void main(String[] args) {
 	List<String> words = List.of("apple", "banana", "apple", "banana", "blueberry");
 Map<String ,Long> listStr=words.stream()

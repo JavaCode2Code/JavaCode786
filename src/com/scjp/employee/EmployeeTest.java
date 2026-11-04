@@ -24,22 +24,25 @@ public class EmployeeTest {
 		employees.stream()
 				.collect(Collectors.groupingBy(Employee::getDepartment,
 						Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))))
-				.forEach((department, employee) -> {
-					// System.out.println("Highest salary in " + department + ": " +
-					// employee.get().getName() + " with salary " + employee.get().getSalary());
-				});
+		
+		  .forEach((department, employee) -> { 
+					/*
+					 * System.out.println( department + ": " + employee.get().getName()+ " "+
+					 * employee.get().getSalary());
+					 */ });
+		 
 
 		// employee who have a salary less then 20000 we have increase by 2000
 		List<Double> list2 = employees.stream().filter(e -> e.getSalary() < 20000).map(em -> em.getSalary() + 2000)
 				.collect(Collectors.toList());
-		System.out.println(list2);
+		//System.out.println(list2);
 
 		// max salary employee
 		Optional<Employee> salEmp = employees.stream()
 				.collect(Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)));
 		System.out.println(salEmp.get().getSalary());
 		
-		//min salary emp
+	//min salary emp
 		
 		Optional<Employee>	minEmp=employees.stream().collect(Collectors.minBy(Comparator.comparing(Employee::getSalary)));
 	System.out.println(minEmp.get().getSalary());
